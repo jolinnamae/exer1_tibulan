@@ -1,3 +1,16 @@
+**What This App Does**
+- Shows a shopping cart with some items and their prices.
+
+- Has an Add to Cart button that shows a message when clicked (it doesn’t actually add items yet).
+
+- Lets you enter your first and last name, and choose a mode of payment (MOP).
+
+- When you select a mode of payment, the app tells you which one you picked.
+
+- If you select “Credit Card,” extra fields appear in a floating window to enter card details.
+
+- You cannot proceed to checkout if any required fields are blank. The app will show a message telling you to complete them.
+
 ## Application Details
 |               |
 | ------------- |
