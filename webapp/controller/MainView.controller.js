@@ -13,10 +13,9 @@ sap.ui.define([
         onAddItem: function () {
             var oTextBundle = this.getOwnerComponent().getModel("i18n").getResourceBundle();
             var sMsg = oTextBundle.getText("addButtonMsg");
-            this.fnDisplayMsg(sMsg);
-        },
+            MessageToast.show(sMsg);
+        },       
         
-
         fnDisplayMsg: function (sMsg) {
             MessageToast.show(sMsg);
         },
