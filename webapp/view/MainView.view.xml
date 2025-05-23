@@ -1,0 +1,96 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" controllerName="com.training.exer1tibulan.controller.MainView" displayBlock="true">
+
+    <Page id="page" title="Simple Form Example" floatingFooter="true">
+        <content>
+            <VBox id="idVBox" class="sapUiSmallMargin">
+                <f:SimpleForm id="idSimpleForm" editable="true" layout="ResponsiveGridLayout" title="Details" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+
+                    <f:content>
+                        <!-- First Name -->
+                        <Label id="idLblFName" text="{i18n>firstNameLbl}"/>
+                        <Input id="idInptFName" value=""/>
+
+                        <!-- Last Name -->
+                        <Label id="idLblLName" text="{i18n>lastNameLbl}" />
+                        <Input id="idInptLName" value=""/>
+
+                        <!-- Mode of Payment -->
+                        <Label id="idLblMOP" text="{i18n>modeOfPaymentLbl}" />
+                        <Select id="idSelMOP" forceSelection="false" change="onChangeMOP">
+                            <items>
+                                <core:Item id="idItmCOD" text="Cash on Delivery" key="COD"/>
+                                <core:Item id="idItmCC" text="Credit Card" key="CC"/>
+                                <core:Item id="idItmGCash" text="GCash" key="GCASH"/>
+                            </items>
+                        </Select>
+
+                        <!-- Credit Card Fields - Initially hidden, will be visible when MOP is Credit Card -->
+                        <VBox id="idCreditCardFields" visible="false">
+                            <Label id="idLblCreditCard" text="{i18n>creditCardNumberLbl}" />
+                            <Input id="idInptCreditCard" value=""/>
+
+                            <Label id="idLblExpDate" text="{i18n>expirationDateLbl}" />
+                            <Input id="idInptExpDate" value=""/>
+
+                            <Label id="idLblCVV" text="{i18n>cvvLbl}" />
+                            <Input id="idInptCVV" value=""/>
+                        </VBox>
+                    </f:content>
+
+                </f:SimpleForm>
+            </VBox>
+        </content>
+
+        <!-- Table Content -->
+        <Table id="idTableSCart" inset="false">
+            <headerToolbar>
+                <OverflowToolbar id="idOFT">
+                    <content>
+                        <Title id="idTableTitleSCart" text="{i18n>shoppingCartTitle}" />
+                        <ToolbarSpacer id="idTSpacer"/>
+                        <Button id="idBtnAddItems" icon="sap-icon://cart-4" tooltip="{i18n>addButtonTooltip}" press="onAddItem"/>
+                     </content>
+                </OverflowToolbar>
+            </headerToolbar>
+            <columns>
+                <Column id="idCol1">
+                    <Text id="idColText1" text="Item"/>
+                </Column>
+                <Column id="idCol2">
+                    <Text id="idColText2" text="Quantity"/>
+                </Column>
+                <Column id="idCol3">
+                    <Text id="idColText3" text="Price"/>
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem id="idColListItem1" vAlign="Middle">
+                    <cells>
+                        <Text id="idText1" text="iPhone 14 Pro Max"/>
+                        <Text id="idText2" text="2"/>
+                        <Text id="idText3" text="$2000"/>
+                    </cells>
+                </ColumnListItem>
+                <ColumnListItem id="idColListItem2" vAlign="Middle">
+                    <cells>
+                        <Text id="idText4" text="Louis Vuitton Speedy"/>
+                        <Text id="idText5" text="1"/>
+                        <Text id="idText6" text="$14000"/>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+
+        <!-- Footer with Checkout Button -->
+        <footer>
+            <OverflowToolbar id="idOFTFooter">
+                <content>
+                    <ToolbarSpacer id="idTSpacerFooter"/>
+                    <Button id="idBtnCheckout" text="{i18n>checkOutBtn}" tooltip="{i18n>checkOutBtn}" press="onPressCheckout"/>
+                </content>
+            </OverflowToolbar>
+        </footer>
+        
+    </Page>
+
+</mvc:View>
