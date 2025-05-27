@@ -68,9 +68,7 @@
         "transition": "slide",
         "type": "View",
         "viewType": "XML",
-        "path": "com.training.exer1tibulan.view",
-        "async": true,
-        "viewPath": "com.training.exer1tibulan.view"
+        "async": true
       },
       "routes": [
         {
@@ -79,13 +77,33 @@
           "target": [
             "TargetMainView"
           ]
+        },
+        {
+          "name": "RouteReviewPage",
+          "pattern": "Review/{firstName}",
+          "target": [
+            "TargetReviewPage"
+          ]
         }
       ],
       "targets": {
         "TargetMainView": {
-          "id": "MainView",
-          "name": "MainView"
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "MainView",
+          "viewName": "com.training.exer1tibulan.view.MainView"
+        },
+        "TargetReviewPage": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "ReviewPage",
+          "viewName": "com.training.exer1tibulan.view.ReviewPage"
         }
+      },
+      "bypassed": {
+        "target": "TargetMainView"
       }
     },
     "rootView": {
